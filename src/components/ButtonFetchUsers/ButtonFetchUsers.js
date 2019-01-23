@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ButtonFetchUsers = () => {
+const ButtonFetchUsers = (props) => {
     return (
-        <button>Dodaj 5 użytkowników</button>
+        <button onClick={props.handleDataFetch}>Dodaj 5 użytkowników</button>
       );
 }
  
