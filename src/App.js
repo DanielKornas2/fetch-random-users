@@ -13,7 +13,18 @@ class App extends Component {
   }
 
   handleDataFetch = () => {
-    console.log('click')
+    fetch(API)
+    .then(response => {
+      if (response.ok) {
+        return response
+      }
+      throw Error (response.status)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => console.log(error))
   }
 
   render() {
@@ -23,7 +34,7 @@ class App extends Component {
     return (
       <div>
         <ButtonFetchUsers handleDataFetch={this.handleDataFetch} />
-        { users ? <UsersList /> : users }
+        { users ? <UsersList users={users} /> : users }
       </div>
     );
   }

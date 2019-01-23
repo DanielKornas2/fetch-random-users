@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UsersList = () => {
+const UsersList = (props) => {
     return (
         <ul>
             <li>Użytkownik 1</li>
